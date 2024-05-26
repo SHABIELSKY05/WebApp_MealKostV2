@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp_MealKostV2", "WebApp_MealKostV2.csproj", "{E978B1EC-D351-4158-8B0C-0DD7068D30F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E978B1EC-D351-4158-8B0C-0DD7068D30F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E978B1EC-D351-4158-8B0C-0DD7068D30F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E978B1EC-D351-4158-8B0C-0DD7068D30F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E978B1EC-D351-4158-8B0C-0DD7068D30F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85081824-D555-4007-B874-2B4FF3B48146}
+	EndGlobalSection
+EndGlobal

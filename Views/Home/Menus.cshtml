@@ -1,0 +1,341 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="row">
+	<div class="col-2">
+	</div>
+	<div class="col-8">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="text-center">Ayo, bikin pola makanmu lebih simpel!</h3>
+					<p class="text-center">MealKost punya rencana makan yang pas sesuai selera, anggaran dan kebutuhan nutrisi harianmu. Temukan banyak resep enak & tips menarik lainnya.</p>
+					<p>Aku ingin mendapat porsi makan sebanyak:</p>
+					<select id="option_porsi" class="form-select">
+					<option>3</option>
+					<option>4</option>
+					<option selected>5</option>
+					</select>
+					<p>Dengan Total Kalori Harian:</p>
+					<select id="option_kalori" class="form-select">
+					<option>1000-1500</option>
+					<option>1500-2000</option>
+					<option>2000-2500</option>
+					</select>
+				<p></p>
+				<div class="row justify-content-center">
+					<div class="col-md-2">
+						<button type="button" class="btn btn-primary btn-sm" onclick="getRandomMenu()" >Cari Menu</button>
+					</div>
+					<div class="col-md-10">
+						<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+							Cek Kebutuhan Kalori Harian Kamu
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+	</div>
+</div>
+
+<div class="row m-4">
+	<div class="col-1">
+	</div>
+	<div class="col-2">
+		<div class="card">
+			<img id="img_sarapan" src="~/omeletkeju.jpg" class="card-img-top" alt="..." onclick="openMenu(1)">
+			<div class="card-body">
+				<h5 class="text-center"><span class="badge bg-success" onclick="openMenu(1)">Sarapan</span></h5>
+				<p class="card-text text-center" style="margin-bottom: 5px;"><span id="title_sarapan"></span></p>
+				<p class="h6 text-center"><span id="calorie_sarapan"></span> kal</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="card" id="card_snack1">
+			<img id="img_snack1" src="~/pancakepisang.jpeg" class="card-img-top" alt="..." onclick="openMenu(2)">
+			<div class="card-body">
+				<h5 class="text-center"><span class="badge bg-warning" onclick="openMenu(2)">Snack</span></h5>
+				<p class="card-text text-center" style="margin-bottom: 5px;"><span id="title_snack1"></span></p>
+				<p class="h6 text-center"><span id="calorie_snack1"></span> kal</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="card">
+			<img id="img_makan_siang" src="~/saladtuna.jpg" class="card-img-top" alt="..." onclick="openMenu(3)">
+			<div class="card-body">
+				<h5 class="text-center"><span class="badge bg-success" onclick="openMenu(3)">Makan Siang</span></h5>
+				<p class="card-text text-center" style="margin-bottom: 5px;"><span id="title_makan_siang"></span></p>
+				<p class="h6 text-center"><span id="calorie_makan_siang"></span> kal</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="card" id="card_snack2">
+			<img id="img_snack2" src="~/jusmangga.jpg" class="card-img-top" alt="..." onclick="openMenu(4)">
+			<div class="card-body">
+				<h5 class="text-center"><span class="badge bg-warning" onclick="openMenu(4)">Snack</span></h5>
+				<p class="card-text text-center" style="margin-bottom: 5px;"><span id="title_snack2"></span></p>
+				<p class="h6 text-center"><span id="calorie_snack2"></span> kal</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+		<div class="card">
+			<img id="img_makan_malam" src="~/tahubrokoli.jpg" class="card-img-top" alt="..." onclick="openMenu(5)">
+			<div class="card-body">
+				<h5 class="text-center"><span class="badge bg-success" onclick="openMenu(5)">Makan Malam</span></h5>
+				<p class="card-text text-center" style="margin-bottom: 5px;"><span id="title_makan_malam"></span></p>
+				<p class="h6 text-center"><span id="calorie_makan_malam"></span> kal</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-1">
+	</div>
+</div>
+
+<div class="row m-4">
+	<div class="col-2">
+	</div>
+	<div class="col-8">
+		<div class="card">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+				<div class="carousel-item active">
+				  <img class="d-block w-100" src="~/tipsdiet.png" alt="First slide">
+				</div>
+				<div class="carousel-item">
+				  <img class="d-block w-100" src="..." alt="Second slide">
+				</div>
+				<div class="carousel-item">
+				  <img class="d-block w-100" src="..." alt="Third slide">
+				</div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+	</div>
+	<div class="col-2">
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Tabel Kebutuhan Kalori Harian</h5>
+      </div>
+      <div class="modal-body">
+		<img src="~/infokaloriharian.png" class="img-fluid" alt="Responsive image">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+	var menu_terpilih = null;
+	var pakets = null;
+	var paket5 = null;
+	var paket4 = null;
+	var paket3 = null;
+
+	var opt_paket = 5;
+	var idx_paket5 = 0;
+	var idx_paket4 = 0;
+	var idx_paket3 = 0;
+
+	var opt_kalori = null;
+
+	$(document).ready(function(){
+		
+		$.get("getPaketMenu", function(data, status){
+			pakets = data;
+			paket5 = pakets.paket5;
+			paket4 = pakets.paket4;
+			paket3 = pakets.paket3;
+			console.log("Paket: " + pakets + "\nStatus: " + status);
+		}).then(()=>{
+			getRandomMenu();
+		});
+	
+	});
+
+	function showMenuItem(){
+
+		$("#img_sarapan").attr("src","/"+menu_terpilih.gambar_sarapan);
+		$("#title_sarapan").text(menu_terpilih.sarapan);
+		$("#calorie_sarapan").text(menu_terpilih.kalori_sarapan);
+
+		$("#img_makan_siang").attr("src","/"+menu_terpilih.gambar_makan_siang);
+		$("#title_makan_siang").text(menu_terpilih.makan_siang);
+		$("#calorie_makan_siang").text(menu_terpilih.kalori_makan_siang);
+
+		$("#img_makan_malam").attr("src","/"+menu_terpilih.gambar_makan_malam);
+		$("#title_makan_malam").text(menu_terpilih.makan_malam);
+		$("#calorie_makan_malam").text(menu_terpilih.kalori_makan_malam);
+
+		$("#img_snack1").attr("src","/none.jpg");
+		$("#title_snack1").text("");
+		$("#calorie_snack1").text("");
+		$("#img_snack2").attr("src","/none.jpg");
+		$("#title_snack2").text("");
+		$("#calorie_snack2").text("");
+
+		if (opt_paket >= 4){
+			$("#img_snack1").attr("src","/"+menu_terpilih.gambar_snack1);
+			$("#title_snack1").text(menu_terpilih.snack1);
+			$("#calorie_snack1").text(menu_terpilih.kalori_snack1);
+
+			if (opt_paket==5){
+				$("#img_snack2").attr("src","/"+menu_terpilih.gambar_snack1);
+				$("#title_snack2").text(menu_terpilih.snack1);
+				$("#calorie_snack2").text(menu_terpilih.kalori_snack1);
+			}
+		}
+
+	}
+
+	function setSnacks(mode){
+		console.log("Set Snacks");
+		console.log(mode);
+		switch(parseInt(mode)){
+			case 5:
+				$("#card_snack1").show();
+				$("#card_snack2").show();
+				console.log("Set Snacks 5");
+				break;
+			case 4:
+				$("#card_snack1").show();
+				$("#card_snack2").hide();
+				console.log("Set Snacks 4");
+				break;
+			case 3:
+				$("#card_snack1").hide();
+				$("#card_snack2").hide();
+				console.log("Set Snacks 3");
+				break;
+		}
+	}
+
+	function getRandomPaket(){
+		var selected_idx = 0;
+		var list_menu = [];
+
+		switch(opt_paket) {
+		  case 5:
+			selected_idx = idx_paket5;
+			list_menu = paket5;
+			break;
+		  case 4:
+			selected_idx = idx_paket4;
+			list_menu = paket4;
+			break;
+		  case 3:
+			selected_idx = idx_paket3;
+			list_menu = paket3;
+		}
+		
+		var opt_kalori_arr = opt_kalori.split("-");
+		var target_kalori_min = parseInt(opt_kalori_arr[0]);
+		var target_kalori_max = parseInt(opt_kalori_arr[1]);
+
+		console.log(opt_paket);
+		console.log(selected_idx);
+		console.log(target_kalori_min);
+		console.log(list_menu);
+		console.log(list_menu[selected_idx]);
+		
+
+		var is_one_route = false;
+
+		while (true) {
+			if (selected_idx < (list_menu.length-1)){
+				selected_idx = selected_idx + 1;
+			}else{
+				if (is_one_route==false){
+					selected_idx = 0;
+					is_one_route = true;
+				}else{
+					break;
+				}
+			}
+
+			if (target_kalori_min <= parseInt(list_menu[selected_idx].total_kalori) && parseInt(list_menu[selected_idx].total_kalori) <= target_kalori_max){
+				break;
+			}
+		}
+
+		switch(opt_paket) {
+		  case 5:
+			idx_paket5 = selected_idx;
+			break;
+		  case 4:
+			idx_paket4 = selected_idx;
+			break;
+		  case 3:
+			idx_paket3 = selected_idx;
+		}
+
+		menu_terpilih = list_menu[selected_idx];
+		console.log(menu_terpilih);
+		return true;
+	}
+
+	function getRandomMenu(){
+		opt_paket = parseInt( $("#option_porsi").find(":selected").val() );
+		console.log("Total Porsi: " + opt_paket);
+		opt_kalori = $("#option_kalori").find(":selected").val();
+		console.log("Total Kalori: " + opt_kalori);
+
+		setSnacks(opt_paket);
+
+		if (getRandomPaket()){
+			showMenuItem();
+		}
+	}
+
+	function openMenu(tipe){
+
+		var menuUrl = "/home/detail?pid=" + "100";
+
+		if (parseInt(tipe)==1){
+			menuUrl = "/home/detail?pid=" + $("#title_sarapan").text();
+		}
+		if (parseInt(tipe)==2){
+			menuUrl = "/home/detail?pid=" + $("#title_snack1").text();
+		}
+		if (parseInt(tipe)==3){
+			menuUrl = "/home/detail?pid=" + $("#title_makan_siang").text();
+		}
+		if (parseInt(tipe)==4){
+			menuUrl = "/home/detail?pid=" + $("#title_snack2").text();
+		}
+		if (parseInt(tipe)==5){
+			menuUrl = "/home/detail?pid=" + $("#title_makan_malam").text();
+		}
+
+		console.log(menuUrl);
+		window.location.href = menuUrl;
+		
+	}
+
+
+</script>
+
+@*onchange="changeMenus(this.options[this.selectedIndex].value)"*@

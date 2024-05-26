@@ -1,0 +1,40 @@
+﻿@using Newtonsoft.Json
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="card" style="width: 100%;">
+          <img src="" id="gambar_menu" class="card-img-top" alt="..." width="400" height="400">
+          <div class="card-body">
+            <h5 class="card-title"<span id="judul_menu"></span></h5>
+            <p class="card-text">Cara Membuat:</p>
+            <div class="text-wrap" id="cara_membuat" style="width: 100%;">
+              This text should wrap.
+            </div>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Karbohidrat: <span id="karbohidrat"></span> kkal</li>
+            <li class="list-group-item">Lemak: <span id="lemak"></span> kkal</li>
+            <li class="list-group-item">Protein: <span id="protein"></span> kkal</li>
+            <li class="list-group-item">Total Kalori: <span id="total_kalori"></span> kkal</li>
+          </ul>
+        </div>
+
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+
+<script>
+
+    var menu = @Html.Raw(JsonConvert.SerializeObject(ViewBag.Menu));
+    console.log(menu);
+
+    $("#gambar_menu").attr("src","/"+menu.nama_file_gambar);
+    $("#judul_menu").text(menu.judul);
+    $("#cara_membuat").html(menu.cara_membuat);
+    $("#karbohidrat").text(menu.karbohidrat);
+    $("#lemak").text(menu.lemak);
+    $("#protein").text(menu.protein);
+    $("#total_kalori").text(menu.total_kalori);
+</script>
